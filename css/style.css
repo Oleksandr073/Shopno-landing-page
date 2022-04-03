@@ -1346,7 +1346,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .about_slider {
         width: 100%;
-        margin-bottom: 50px;
+        margin-bottom: 25px;
         padding-top: 95%;
     }
 
@@ -1435,6 +1435,12 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
     }
 
+    /* team */
+
+    .team_info {
+        padding: 15px;
+    }
+
     /* reviews */
 
     .reviews_slider {
@@ -1447,6 +1453,10 @@ h1, h2, h3, h4, h5, h6 {
         padding: 70px 30px;
     }
 */
+
+    .reviews_review {
+        width: 90%
+    }
 
     .reviews_buttons {
         margin-top: 0;
@@ -1483,10 +1493,24 @@ h1, h2, h3, h4, h5, h6 {
         display: block;
     }
 
+    /* about */
+
+    .about_slider {
+        margin-bottom: 0;
+    }
+
     /* services */
 
     .services_item {
-        height: 300px;
+        height: 325px;
+    }
+
+    .services_back {
+        padding: 30px;
+    }
+
+    .services_back svg {
+        left: 30px;
     }
 
     .services_info {
@@ -1495,6 +1519,20 @@ h1, h2, h3, h4, h5, h6 {
 
     .services_more {
         margin-left: 30px;
+    }
+
+    /* team */
+
+    .team {
+        grid-template-columns: auto;
+    }
+
+    .team_info {
+        height: 200px;
+    }
+
+    .team_socials {
+        justify-content: center;
     }
 
     /* reviews */
