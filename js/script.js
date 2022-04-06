@@ -8,23 +8,28 @@ window.onscroll = function fixHeader() {
     if (window.pageYOffset >= introHeight) {
         header.classList.add('header_fixed');
     } else {
-        header.classList.remove('header_fixed')
+        header.classList.remove('header_fixed');
     }
 };
 
 // logo //
 const logo = document.querySelector('.logo');
 logo.addEventListener('click', function () {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth',
-        });
+    if (nav.classList[1] == '_active') {
+        burgerOff();
+    }
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
 });
 
 // burger //
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav');
-burger.addEventListener('click', function (event) {
+burger.addEventListener('click', burgerOnOff);
+
+function burgerOnOff() {
     burger.classList.toggle('_active');
     nav.classList.toggle('_active');
 
@@ -35,6 +40,25 @@ burger.addEventListener('click', function (event) {
     }
     function navLinkOpacity(i) {
         navLinks[i - 1].classList.toggle('_active');
+    }
+}
+
+function burgerOff() {
+    burger.classList.remove('_active');
+    nav.classList.remove('_active');
+
+    const navLinks = document.querySelectorAll('.nav_link[data-goto]');
+    for (let i = 1; i <= navLinks.length; i++) {
+        setTimeout(navLinkOpacity, (navLinks.length - i) * 35, i);
+    }
+    function navLinkOpacity(i) {
+        navLinks[i - 1].classList.toggle('_active');
+    }
+}
+
+document.addEventListener('click', function (event) {
+    if (nav.classList[1] == '_active' && !event.target.closest('.header_inner')) {
+        burgerOff();
     }
 });
 
@@ -47,18 +71,8 @@ if (navLinks.length > 0) {
             if (navLink.dataset.goto && document.querySelector(navLink.dataset.goto)) { // 0_o
                 const gotoSection = document.querySelector(navLink.dataset.goto).closest('.section');
                 const gotoSectionValue = gotoSection.getBoundingClientRect().top + window.pageYOffset;
-                const nav = document.querySelector('.nav');
-                nav.classList.toggle('_active');
-                const burger = document.querySelector('.burger');
-                burger.classList.toggle('_active');
 
-                for (let i = 1; i <= navLinks.length; i++) {
-                    if (nav.classList[1] == '_active') setTimeout(navLinkOpacity, i * 50, i);
-                    else setTimeout(navLinkOpacity, (navLinks.length - i) * 35, i);
-                }
-                function navLinkOpacity(i) {
-                    navLinks[i - 1].classList.toggle('_active');
-                }
+                burgerOnOff();
 
                 window.scrollTo({
                     top: gotoSectionValue,
