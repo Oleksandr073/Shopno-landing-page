@@ -15,7 +15,7 @@ window.onscroll = function fixHeader() {
 // logo //
 const logo = document.querySelector('.logo');
 logo.addEventListener('click', function () {
-    if (nav.classList[1] == '_active') {
+    if (nav.className.includes('_active')) {
         burgerOff();
     }
     window.scrollTo({
@@ -32,10 +32,10 @@ burger.addEventListener('click', burgerOnOff);
 function burgerOnOff() {
     burger.classList.toggle('_active');
     nav.classList.toggle('_active');
-
+    
     const navLinks = document.querySelectorAll('.nav_link[data-goto]');
     for (let i = 1; i <= navLinks.length; i++) {
-        if (nav.classList[1] == '_active') setTimeout(navLinkOpacity, i * 50, i);
+        if (nav.className.includes('_active')) setTimeout(navLinkOpacity, i * 50, i);
         else setTimeout(navLinkOpacity, (navLinks.length - i) * 35, i);
     }
     function navLinkOpacity(i) {
@@ -57,7 +57,7 @@ function burgerOff() {
 }
 
 document.addEventListener('click', function (event) {
-    if (nav.classList[1] == '_active' && !event.target.closest('.header_inner')) {
+    if (nav.className.includes('_active') && !event.target.closest('.header_inner')) {
         burgerOff();
     }
 });
