@@ -62,6 +62,12 @@ document.addEventListener('click', function (event) {
     }
 });
 
+document.addEventListener('touchstart', function (event) {
+    if (nav.className.includes('_active') && !event.target.closest('.header_inner')) {
+        burgerOff();
+    }
+});
+
 // nav //
 const navLinks = document.querySelectorAll('.nav_link[data-goto]');
 if (navLinks.length > 0) {
