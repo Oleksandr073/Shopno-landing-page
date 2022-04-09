@@ -330,3 +330,15 @@ function leftRight1(i) {
     reviewsReview[i].classList.remove('left');
     reviewsReview[i].classList.add('right');
 }
+
+// forms //
+window.addEventListener('beforeunload', function (event) {
+    for (let form of document.forms) {
+        for (let input of form) {
+            if (input.value && input.type != 'submit') {
+                event.preventDefault();
+                event.returnValue = '';
+            };
+        }
+    }
+});

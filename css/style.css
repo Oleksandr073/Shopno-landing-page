@@ -309,7 +309,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn {
     display: inline-block;
-    vertical-align: top;
     padding: 16px 45px;
     text-align: center;
 
@@ -1143,6 +1142,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn--msg {
+    width: 50%;
     border: 0;
     background-color: #424648;
     color: #bbb8b9;
