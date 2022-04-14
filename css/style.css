@@ -22,13 +22,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
 
-/*
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-*/
 
 /* Container */
 
@@ -820,14 +818,16 @@ ul {
     align-items: flex-end;
 }
 
-.team_soc {
+.team_socials li {
     margin-right: 15px;
-
-    fill: #505050;
 }
 
-.team_soc:last-child {
+.team_socials li:last-child {
     margin: 0;
+}
+
+.team_soc {
+    fill: #505050;
 }
 
 .team_soc svg {
@@ -1047,6 +1047,10 @@ ul {
     border-radius: 3px;
 
     transition: all .2s ease;
+
+/* button's styles */
+    padding: 0;
+    border: 0;
 }
 
 .reviews_btn svg {
@@ -1219,6 +1223,14 @@ ul {
     margin-bottom: 40px;
 }
 
+.footer_socials li {
+    margin-right: 10px;
+}
+
+.footer_socials li:last-child {
+    margin-right: 0;
+}
+
 .footer_soc {
     width: 50px;
     height: 40px;
@@ -1226,8 +1238,6 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    margin-right: 10px;
 
     text-decoration: none;
     background-color: #424648;
@@ -1243,10 +1253,6 @@ ul {
 .footer_soc:hover {
     background-color: #6eeee4;
     fill: #070e0d;
-}
-
-.footer_soc:last-child {
-    margin-right: 0;
 }
 
 .footer_copy {
