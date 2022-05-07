@@ -164,8 +164,15 @@ ul {
     height: 310px;
 }
 
-.nav_link {
+.nav_item {
     margin-bottom: 10px;
+}
+
+.nav_item:last-child {
+    margin: 0;
+}
+
+.nav_link {
     padding: 0 10px;
 
     font-size: 1.5rem;
@@ -179,10 +186,6 @@ ul {
     opacity: 0;
 
     transition: all .025s linear;
-}
-
-.nav_link:last-child {
-    margin: 0;
 }
 
 .nav_link:hover {
